@@ -1,0 +1,33 @@
+<h1>Lista de Produtos</h1>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Preço</th>
+    </tr>
+
+    @for (int i = 0; i < ViewBag.Nomes.Count; i++)
+    {
+        double preco = ViewBag.Precos[i];
+
+        if (preco < 100)
+        {
+            <tr style="color: green;">
+                <td>@(i + 1)</td>
+                <td>@ViewBag.Nomes[i]</td>
+                <td>R$ @preco.ToString("F2")</td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@ViewBag.Nomes[i]</td>
+                <td>R$ @preco.ToString("F2")</td>
+            </tr>
+        }
+    }
+</table>
+
+<p><strong>Total: @ViewBag.Total produtos</strong></p>

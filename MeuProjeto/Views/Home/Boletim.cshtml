@@ -1,0 +1,56 @@
+<h1>Boletim Escolar</h1>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Disciplina</th>
+        <th>Nota</th>
+        <th>Status</th>
+    </tr>
+
+    @for (int i = 0; i < ViewBag.Disciplinas.Count; i++)
+    {
+        double nota = ViewBag.Notas[i];
+
+        <tr>
+            <td>@ViewBag.Disciplinas[i]</td>
+            <td>@nota.ToString("F1")</td>
+
+            @if (nota >= 5)
+            {
+                <td style="color: green;"><strong>Aprovado</strong></td>
+            }
+            else
+            {
+                <td style="color: red;"><strong>Reprovado</strong></td>
+            }
+        </tr>
+    }
+    <tr>
+        <td colspan="2"><strong>Média Geral</strong></td>
+        <td><strong>@ViewBag.Media.ToString("F1")</strong></td>
+    </tr>
+</table>
+
+<p>
+    <strong>Conceito: </strong>
+    @{
+        double m = ViewBag.Media;
+        string conceito = m >= 9 ? "A" : m >= 7 ? "B" : m >= 5 ? "C" : "D";
+
+        switch (conceito)
+        {
+            case "A":
+                <span style="color: green;"><strong>A — Excelente!</strong></span>
+                break;
+            case "B":
+                <span style="color: blue;"><strong>B — Bom!</strong></span>
+                break;
+            case "C":
+                <span style="color: orange;"><strong>C — Regular</strong></span>
+                break;
+            default:
+                <span style="color: red;"><strong>D — Insuficiente</strong></span>
+                break;
+        }
+    }
+</p>

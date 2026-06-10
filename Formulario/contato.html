@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Formulario/contato.css">
+    <title>Document</title>
+</head>
+<body>
+   <form id="meuForm">
+    <h1 bold>Formulário de cadastro</h1>
+        <label for="campoNome">Nome:</label>
+        <input type="text" id="campoNome" placeholder="Digite o nome" required><br>
+    
+        <label for="Email">E-mail:</label>
+        <input type="Email" id="SeuEmail" placeholder="Digite seu e-mail" required><br>
+    
+        <label for="Assunto" class="Etinia">Etnia</label>
+        <select required>
+              <option value="">Selecione sua etnia</option>
+            <option value="Branco">Branco</option>
+             <option value="Preto">Preto</option>
+              <option value="Amarelo">Amarelo</option>
+               <option value="Indigena">Indigena</option>
+        </select><br>
+
+        <label class="mensagem" for="Mensagem">Mensagem</label>
+        <textarea id="mensagem"  required ></textarea>
+
+        <div class="controles">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    <div id="resultado"></div>
+</body>
+</html>
